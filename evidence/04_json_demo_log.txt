@@ -1,0 +1,23 @@
+--- Testing JSON Formatter ---
+
+[Test 1] Original: {"status": "ok", "count": 10}
+       Result: {"status": "ok", "count": 10}
+       ✅ PASSED
+
+[Test 2] Original: ```json
+{"name": "LangChain", "type": "Framework"}
+```
+       Result: {"name": "LangChain", "type": "Framework"}
+       ✅ PASSED
+
+[Test 3] Original: {'key': 'value', 'metadata': 'info'}
+       Result: {"key": "value", "metadata": "info"}
+       ✅ PASSED
+
+[Test 4] Original: {"list": [1, 2, 3, ], }
+       Result: {"list": [1, 2, 3]}
+       ✅ PASSED
+
+[Test 5] Original: This is not JSON at all
+       Result: {"error": "Failed to parse or repair JSON", "details": "Expecting value: line 1 column 1 (char 0)", "raw": "This is not JSON at all"}
+       ✅ PASSED

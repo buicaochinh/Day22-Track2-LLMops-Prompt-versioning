@@ -1,0 +1,21 @@
+--- Testing PII Detector ---
+
+[Test 1] Original: This is a clean string with no PII.
+       Redacted: This is a clean string with no PII.
+       ✅ PASSED
+
+[Test 2] Original: My email is test@example.com and phone is 123-456-7890.
+       Redacted: My email is [REDACTED] and phone is [REDACTED].
+       ✅ PASSED
+
+[Test 3] Original: Social Security Number: 999-00-1111.
+       Redacted: Social Security Number: [REDACTED].
+       ✅ PASSED
+
+[Test 4] Original: Credit card number: 1234-5678-9012-3456.
+       Redacted: Credit card number: [REDACTED].
+       ✅ PASSED
+
+[Test 5] Original: Multiple PII: Reach me at admin@domain.org or call (555) 000-9999.
+       Redacted: Multiple PII: Reach me at [REDACTED] or call [REDACTED].
+       ✅ PASSED
